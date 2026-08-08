@@ -16,12 +16,10 @@ body {
   padding: 7vh 8vw 5vh;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
-
-   background-image: url('assets/Fundim.jpeg');
+  background-image: url('assets/Fundim.jpeg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  /* fallback de cor caso a imagem não carregue */
   background-color: #333;
 }
 
@@ -33,19 +31,16 @@ button {
 
 select {
   appearance: none;
-  
 }
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
-    
 }
 
 input[type="number"] {
     appearance: textfield;
-    
 }
 
 .texto-medio-azul {
@@ -53,19 +48,17 @@ input[type="number"] {
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 110%; /* 1.65rem */
+  line-height: 110%;
 }
 
 .conteudo-principal {
   filter: drop-shadow(0px 0px 70px rgba(255, 255, 255, 0.4));
   min-height: 100%;
   padding: 5rem 6.5rem;
-  
   display: grid;
   grid-template-columns: 1.375fr 1fr;
   column-gap: 5rem;
-
-
+  position: relative;
 }
 
 .grafismo-azul {
@@ -83,7 +76,7 @@ input[type="number"] {
   font-weight: 700;
   line-height: 100%;
   margin-bottom: 2.5rem;
-  color: #FFF
+  color: #FFF;
 }
 
 .texto-azul {
@@ -102,7 +95,6 @@ input[type="number"] {
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
-  
 }
 
 .produto-input {
@@ -111,30 +103,17 @@ input[type="number"] {
   padding: 1rem;
   border-radius: 0.5rem;
   border: 1px solid var(--Light-Blue, #a8a2a2);
-
   color: var(--Void, #24ffff);
   font-family: Inter;
   font-size: 1.3125rem;
   font-style: italic;
   font-weight: 400;
   line-height: 110%;
-  
   background: url('./assets/arrow-down.svg') no-repeat right 1rem top 50%;
+  background-color: #111;
 }
 
-.dropdown {
-  width: 3.375rem;
-  height: 3.5rem;
-  padding: 1rem;
-  justify-content: center;
-  align-items: center;
-  gap: 0.625rem;
-  border-radius: 0rem 0.5rem 0.5rem 0rem;
-  border: 1px solid var(--Light-Blue, #f3f3f3);
-  cursor: pointer;
-}
-
-.formulario > .parte-inferior {
+.formulario .parte-inferior {
   display: flex;
   align-items: flex-end;
   gap: 2rem;
@@ -147,20 +126,19 @@ input[type="number"] {
   width: 4.5rem;
   border-radius: 0.5rem;
   border: 1px solid var(--Light-Blue, #1875E8);
-
   color: var(--Void, #050505);
   font-family: Inter;
   font-size: 1.3125rem;
   font-style: italic;
   font-weight: 400;
   line-height: 110%;
+  background-color: #fff;
 }
 
 .botoes-wrapper {
   display: flex;
   align-items: flex-end;
   gap: 1rem;
-  
 }
 
 .botao-form {
@@ -174,13 +152,11 @@ input[type="number"] {
   gap: 0.625rem;
   border-radius: 1rem;
   cursor: pointer;
-  
 }
 
 .botao-adicionar {
   background: var(--Light-Blue, #d2e436);
   box-shadow: 0px 0px 20px 0px rgba(212, 209, 4, 0.5);
-
   color: var(--Branco, #000000);
   font-size: 1.5rem;
   font-weight: 700;
@@ -191,7 +167,6 @@ input[type="number"] {
   border-radius: 1rem;
   background: var(--Void, #4a5157);
   box-shadow: 0px 0px 20px 0px rgba(1, 8, 14, 0.50);
-
   color: var(--Branco, #000000);
   font-size: 1.5rem;
   font-weight: 700;
@@ -204,7 +179,6 @@ input[type="number"] {
   flex-direction: column;
   align-items: flex-start;
   gap: 2rem;
-  color:#06501f
 }
 
 .titulo-wrapper {
@@ -219,7 +193,7 @@ input[type="number"] {
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 110%; /* 1.65rem */
+  line-height: 110%;
 }
 
 .carrinho__produtos {
@@ -227,14 +201,13 @@ input[type="number"] {
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
-  color:#1891d6
 }
 
 .carrinho__produtos__produto {
   font-size: 1.3125rem;
   font-style: italic;
   font-weight: 400;
-  line-height: 110%; /* 1.44375rem */
+  line-height: 110%;
   color: #1891d6;
 }
 
@@ -247,8 +220,8 @@ input[type="number"] {
 .carrinho__total {
   font-size: 2.25rem;
   font-weight: 700;
-  line-height: 110%; /* 2.475rem */
-  color:#1891d6
+  line-height: 110%;
+  color: #1891d6;
 }
 
 .adicionar-produto {
