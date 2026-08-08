@@ -1,33 +1,47 @@
-let tudo;
-// document.getElementById ('lista-produtos').innerHTML = '';
-// tudo = '';
-// document.getElementById ('valor-total').textContent = 'Nenhum item ainda'
-// tudo virou:
-Menos();
+let valorTotalGeral = 0;
 
-function Mais() {
-let thing = document.getElementById ('produto').value;
-let nameOfProduct = thing.split('-')[0];
-let valeuProduct = thing.split('R$')[1];
-let quantus = document.getElementById ('quantidade').value;
+// Inicializa o carrinho limpo ao carregar a página
+limpar();
 
-let soma = quantus * valeuProduct;
+function adicionar() {
+  let produtoSelecionado = document.getElementById('produto').value;
+  let quantidadeInput = document.getElementById('quantidade').value;
 
-let miniCar = document.getElementById('lista-produtos');
-miniCar.innerHTML = miniCar.innerHTML + `        <section class="carrinho__produtos__produto">
-          <span class="texto-azul">${quantus}x</span> ${nameOfProduct} <span class="texto-azul">R$${soma}</span>
-        </section>`;
+  // Validação básica da quantidade
+  if (!quantidadeInput || quantidadeInput <= 0) {
+    alert("Por favor, insira uma quantidade válida.");
+    return;
+  }
 
-tudo = tudo + soma;
-let lugarTudo = document.getElementById ('valor-total');
-lugarTudo.textContent = `R$ ${tudo}`; 
-document.getElementById ('quantidade').value = 0;
+  // Separa o nome do produto e o valor usando o hífen
+  let partes = produtoSelecionado.split('-');
+  let nomeProduto = partes[0];
+  let valorProduto = parseFloat(partes[1]);
+  let quantidade = parseInt(quantidadeInput);
+
+  // Calcula o subtotal do item
+  let subtotal = quantidade * valorProduto;
+
+  // Adiciona o produto na lista visual do carrinho
+  let listaProdutos = document.getElementById('lista-produtos');
+  listaProdutos.innerHTML += `
+    <section class="carrinho__produtos__produto">
+      <span class="texto-azul">${quantidade}x</span> ${nomeProduto} <span class="texto-azul">R$${subtotal}</span>
+    </section>
+  `;
+
+  // Atualiza o valor total geral
+  valorTotalGeral += subtotal;
+  let campoTotal = document.getElementById('valor-total');
+  campoTotal.textContent = `R$ ${valorTotalGeral}`;
+
+  // Reseta o campo de quantidade para 1
+  document.getElementById('quantidade').value = 1;
 }
 
-
-function Menos() {
-  tudo = 0;
-  document.getElementById ('lista-produtos').innerHTML = '';
-  // tudo = '';
-  document.getElementById ('valor-total').textContent = ' Nada ainda'
+function limpar() {
+  valorTotalGeral = 0;
+  document.getElementById('lista-produtos').innerHTML = '';
+  document.getElementById('valor-total').textContent = 'R$ 0';
+  document.getElementById('quantidade').value = 1;
 }
